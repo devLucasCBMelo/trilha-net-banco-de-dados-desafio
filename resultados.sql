@@ -38,3 +38,13 @@ ORDER BY SUM(`Duracao`) DESC;
 
 -- Requisito 8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
 SELECT * FROM `Atores` WHERE `Genero` = 'M';
+
+-- Requisito 9 - Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
+SELECT * FROM `Atores` WHERE `Genero` = 'F' ORDER BY `PrimeiroNome`;
+
+-- Requisito 10 - Buscar o nome do filme e o gênero
+SELECT `Nome`, `Genero`
+FROM
+    `Filmes` AS F
+    INNER JOIN `FilmesGenero` AS FG ON `F`.`Id` = FG.`IdFilme`
+    INNER JOIN `Generos` AS G ON G.`Id` = FG.`IdGenero`;
