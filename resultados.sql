@@ -57,3 +57,13 @@ FROM
     INNER JOIN `Generos` AS G ON G.`Id` = FG.`IdGenero`
 WHERE
     `Genero` = 'Mistério';
+
+SELECT
+    `Nome`,
+    `PrimeiroNome`,
+    `UltimoNome`,
+    `Papel`
+FROM
+    `Filmes` AS F
+    INNER JOIN `ElencoFilme` AS EF ON F.`Id` = EF.`IdFilme`
+    INNER JOIN `Atores` AS A ON A.`Id` = EF.`IdAtor`;
